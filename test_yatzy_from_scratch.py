@@ -58,3 +58,6 @@ def test_yatzi():
 def test_small_straight():
     assert Yatzy.smallStraight(1, 2, 3, 4, 5) == 15
     assert Yatzy.smallStraight(2, 3, 4, 5, 6) == 0
+
+
+print()
