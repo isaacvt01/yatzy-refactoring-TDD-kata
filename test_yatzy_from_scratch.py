@@ -59,5 +59,9 @@ def test_small_straight():
     assert Yatzy.smallStraight(1, 2, 3, 4, 5) == 15
     assert Yatzy.smallStraight(2, 3, 4, 5, 6) == 0
 
-
-print()
+# Large Straight
+# Devuelve una puntuación de 20 puntos si los números están ordenados de 2 a 6
+def test_large_straight():
+    assert Yatzy.largeStraight(1, 2, 3, 4, 5) == 0
+    assert Yatzy.largeStraight(2, 3, 4, 5, 6) == 20
+    assert Yatzy.largeStraight(3, 2, 4, 5, 6) == 20
