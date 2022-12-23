@@ -28,6 +28,7 @@ def test_fours(inyector):
     
     '''
 
+
 # Chance
 # Suma el número de todos los dados sin importar si coinciden.
 
@@ -35,3 +36,17 @@ def test_fours(inyector):
 def test_chance():
     assert 15 == Yatzy.chance(1, 2, 3, 4, 5)
     assert 17 == Yatzy.chance(3, 2, 6, 2, 4)
+
+
+# yatzy
+# Devuelve una puntuación de 50 puntos si todos los dados coinciden, si no, devuelve 0
+def test_yatzi():
+    # Pruebas con 5 dados
+    assert Yatzy.yatzy(1, 2, 3, 4, 5) == 0
+    assert Yatzy.yatzy(1, 1, 1, 1, 1) == 50
+
+    # Pruebas con más de 5 dados
+
+    assert Yatzy.yatzy(1, 1, 1, 1, 1, 1, 3) == 0
+    assert Yatzy.yatzy(2, 2, 1, 4, 5, 6, 1, 6) == 0
+    assert Yatzy.yatzy(6, 6, 6, 6, 6, 6, 6, 6) == 50
