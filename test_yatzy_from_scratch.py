@@ -50,3 +50,14 @@ def test_yatzi():
     assert Yatzy.yatzy(1, 1, 1, 1, 1, 1, 3) == 0
     assert Yatzy.yatzy(2, 2, 1, 4, 5, 6, 1, 6) == 0
     assert Yatzy.yatzy(6, 6, 6, 6, 6, 6, 6, 6) == 50
+
+
+# Small Straight
+# Devuelve una puntuación de 15 puntos si los números están ordenados de 1 a 5
+
+def test_small_straight():
+    assert Yatzy.smallStraight(1, 2, 3, 4, 5) == 15
+    assert Yatzy.smallStraight(2, 3, 4, 5, 6) == 0
+
+
+print()
