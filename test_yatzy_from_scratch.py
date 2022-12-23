@@ -1,7 +1,7 @@
 import pytest
 from yatzy import Yatzy
 
-# Chance
+'''# Chance
 # The player scores the sum of all dice, no matter what they read.
 
 
@@ -25,3 +25,13 @@ def test_fours(inyector):
     # No puedo testear con fixtures = inyeccion de dependencias
     # los metodos estaticos como chance()
     assert valorEsperado == inyector.fours()
+    
+    '''
+
+# Chance
+# Suma el número de todos los dados sin importar si coinciden.
+
+
+def test_chance():
+    assert 15 == Yatzy.chance(1, 2, 3, 4, 5)
+    assert 17 == Yatzy.chance(3, 2, 6, 2, 4)
