@@ -102,3 +102,9 @@ def test_ones():
     assert Yatzy.ones(4, 6, 1, 4, 3) == 1
     assert Yatzy.ones(2, 4, 3, 5, 6) == 0
     assert Yatzy.ones(1, 3, 1, 1, 1) == 4
+
+def test_twos():
+    assert Yatzy.twos(1, 2, 2, 2 ,2) == 8
+    assert Yatzy.twos(1, 3, 4, 5 ,6) == 0
+    assert Yatzy.twos(2, 2, 2, 2, 2) == 10
+    assert Yatzy.twos(2, 3, 2, 3, 3) == 4
