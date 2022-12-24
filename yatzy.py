@@ -26,15 +26,11 @@ class Yatzy:
     def threes(*dice):
         return dice.count(3) * 3
 
-    def __init__(self, dice):
+    def __init__(self, *dice):
         self.dice = dice
 
     def fours(self):
-        sum = 0
-        for at in range(5):
-            if (self.dice[at] == 4):
-                sum += 4
-        return sum
+        return self.dice.count(4) * 4
 
     def fives(self):
         s = 0
