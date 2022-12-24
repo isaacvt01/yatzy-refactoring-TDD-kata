@@ -118,17 +118,16 @@ class Yatzy:
 
 
     @staticmethod
-    def four_of_a_kind(_1, _2, d3, d4, d5):
-        tallies = [0] * 6
-        tallies[_1 - 1] += 1
-        tallies[_2 - 1] += 1
-        tallies[d3 - 1] += 1
-        tallies[d4 - 1] += 1
-        tallies[d5 - 1] += 1
-        for i in range(6):
-            if (tallies[i] >= 4):
-                return (i + 1) * 4
+    def four_of_a_kind(*dice):
+        dice = list(dice)
+        dice = sorted(dice, reverse=True)
+        for die in dice:
+            if dice.count(die) == 4:
+                return die * 4
+            else:
+                continue
         return 0
+
 
     @staticmethod
     def three_of_a_kind(*dice):
@@ -159,7 +158,11 @@ class Yatzy:
                 return 0
         return 20
 
-    #@staticmethod
-    #def fullHouse(*dice):
+    @staticmethod
+    def fullHouse(*dice):
+        if Yatzy.two_of_a_kind(*dice) and Yatzy.three_of_a_kind(*dice):
+            return Yatzy.two_of_a_kind(*dice) + Yatzy.three_of_a_kind(*dice)
+        else:
+            return 0
 
 
