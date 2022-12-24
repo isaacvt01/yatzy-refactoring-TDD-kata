@@ -23,19 +23,8 @@ class Yatzy:
         return dice.count(2) * 2
 
     @staticmethod
-    def threes(d1, d2, d3, d4, d5):
-        s = 0
-        if (d1 == 3):
-            s += 3
-        if (d2 == 3):
-            s += 3
-        if (d3 == 3):
-            s += 3
-        if (d4 == 3):
-            s += 3
-        if (d5 == 3):
-            s += 3
-        return s
+    def threes(*dice):
+        return dice.count(3) * 3
 
     def __init__(self, dice):
         self.dice = dice
