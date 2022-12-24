@@ -95,3 +95,41 @@ def test_four_of_a_kind():
     assert Yatzy.four_of_a_kind(1, 4, 1, 1, 1) == 4
     assert Yatzy.four_of_a_kind(4, 4, 2, 4, 3) == 0
     assert Yatzy.four_of_a_kind(2, 3, 2, 2, 2) == 8
+
+
+def test_ones():
+    assert Yatzy.ones(1, 2, 4, 5, 1) == 2
+    assert Yatzy.ones(4, 6, 1, 4, 3) == 1
+    assert Yatzy.ones(2, 4, 3, 5, 6) == 0
+    assert Yatzy.ones(1, 3, 1, 1, 1) == 4
+
+
+def test_twos():
+    assert Yatzy.twos(1, 2, 2, 2, 2) == 8
+    assert Yatzy.twos(1, 3, 4, 5, 6) == 0
+    assert Yatzy.twos(2, 2, 2, 2, 2) == 10
+    assert Yatzy.twos(2, 3, 2, 3, 3) == 4
+
+
+def test_threes():
+    assert Yatzy.threes(3, 5, 1, 4, 5) == 3
+    assert Yatzy.threes(3, 3, 3, 3, 2) == 12
+    assert Yatzy.threes(1, 2, 4, 5, 6) == 0
+    assert Yatzy.threes(3, 2, 1, 3, 4) == 6
+
+
+@pytest.fixture()
+def dados():
+    tirada = Yatzy(4, 4, 5, 5, 6)
+    return tirada
+
+
+def test_fours(dados):
+    assert 8 == dados.fours()
+
+
+def test_fives(dados):
+    assert 10 == dados.fives()
+
+def test_sixes(dados):
+    assert 6 == dados.sixes()
