@@ -116,3 +116,13 @@ def test_threes():
     assert Yatzy.threes(3, 3, 3, 3, 2) == 12
     assert Yatzy.threes(1, 2, 4, 5, 6) == 0
     assert Yatzy.threes(3, 2, 1, 3, 4) == 6
+
+
+@pytest.fixture()
+def dados():
+    tirada = Yatzy(4, 4, 3, 5, 4)
+    return tirada
+
+
+def test_fours(dados):
+    assert 12 == dados.fours()
