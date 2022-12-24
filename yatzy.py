@@ -159,7 +159,11 @@ class Yatzy:
                 return 0
         return 20
 
-    #@staticmethod
-    #def fullHouse(*dice):
+    @staticmethod
+    def fullHouse(*dice):
+        if Yatzy.two_of_a_kind(*dice) and Yatzy.three_of_a_kind(*dice):
+            return Yatzy.two_of_a_kind(*dice) + Yatzy.three_of_a_kind(*dice)
+        else:
+            return 0
 
 
