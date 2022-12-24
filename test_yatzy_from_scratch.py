@@ -130,3 +130,6 @@ def test_fours(dados):
 
 def test_fives(dados):
     assert 10 == dados.fives()
+
+def test_sixes(dados):
+    assert 6 == dados.fives()
