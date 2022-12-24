@@ -2,10 +2,10 @@ class Yatzy:
 
     @staticmethod
     def chance(*dice):
-        total = 0
+        score = 0
         for die in dice:
-            total += die
-        return total
+            score += die
+        return score
 
     @staticmethod
     def yatzy(*dice):
@@ -105,24 +105,17 @@ class Yatzy:
         return 0
 
     @staticmethod
-    def two_pair(d1, d2, d3, d4, d5):
-        counts = [0] * 6
-        counts[d1 - 1] += 1
-        counts[d2 - 1] += 1
-        counts[d3 - 1] += 1
-        counts[d4 - 1] += 1
-        counts[d5 - 1] += 1
-        n = 0
-        score = 0
-        for i in range(6):
-            if (counts[6 - i - 1] >= 2):
-                n = n + 1
-                score += (6 - i)
+    def two_pair(*dice):
+        dice = list(dice)
+        dice = sorted(dice, reverse=True)
+        for die in dice:
+            if dice.count(die) == 2:
+                return die + die
+            else:
+                continue
+        return 0
 
-        if (n == 2):
-            return score * 2
-        else:
-            return 0
+
 
     @staticmethod
     def four_of_a_kind(_1, _2, d3, d4, d5):
@@ -168,33 +161,7 @@ class Yatzy:
                 return 0
         return 20
 
-    @staticmethod
-    def fullHouse(d1, d2, d3, d4, d5):
-        tallies = []
-        _2 = False
-        i = 0
-        _2_at = 0
-        _3 = False
-        _3_at = 0
+    #@staticmethod
+    #def fullHouse(*dice):
 
-        tallies = [0] * 6
-        tallies[d1 - 1] += 1
-        tallies[d2 - 1] += 1
-        tallies[d3 - 1] += 1
-        tallies[d4 - 1] += 1
-        tallies[d5 - 1] += 1
 
-        for i in range(6):
-            if (tallies[i] == 2):
-                _2 = True
-                _2_at = i + 1
-
-        for i in range(6):
-            if (tallies[i] == 3):
-                _3 = True
-                _3_at = i + 1
-
-        if _2 and _3:
-            return _2_at * 2 + _3_at * 3
-        else:
-            return 0

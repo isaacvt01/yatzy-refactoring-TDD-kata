@@ -75,3 +75,8 @@ def test_full_house():
     assert Yatzy.fullHouse(1, 1, 3, 3, 3) == 11
     assert Yatzy.fullHouse(3, 3, 5, 5, 5) == 21
     assert Yatzy.fullHouse(1, 2, 3, 3, 3) == 0
+
+
+def test_two_of_a_kind():
+    assert Yatzy.two_pair(1, 1, 2, 4, 5) == 2
+    assert Yatzy.two_pair(5, 5, 3, 3, 2) == 10
