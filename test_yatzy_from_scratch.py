@@ -120,9 +120,13 @@ def test_threes():
 
 @pytest.fixture()
 def dados():
-    tirada = Yatzy(4, 4, 3, 5, 4)
+    tirada = Yatzy(4, 4, 5, 5, 6)
     return tirada
 
 
 def test_fours(dados):
-    assert 12 == dados.fours()
+    assert 8 == dados.fours()
+
+
+def test_fives(dados):
+    assert 10 == dados.fives()
