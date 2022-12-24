@@ -95,3 +95,10 @@ def test_four_of_a_kind():
     assert Yatzy.four_of_a_kind(1, 4, 1, 1, 1) == 4
     assert Yatzy.four_of_a_kind(4, 4, 2, 4, 3) == 0
     assert Yatzy.four_of_a_kind(2, 3, 2, 2, 2) == 8
+
+
+def test_ones():
+    assert Yatzy.ones(1, 2, 4, 5, 1) == 2
+    assert Yatzy.ones(4, 6, 1, 4, 3) == 1
+    assert Yatzy.ones(2, 4, 3, 5, 6) == 0
+    assert Yatzy.ones(1, 3, 1, 1, 1) == 4
