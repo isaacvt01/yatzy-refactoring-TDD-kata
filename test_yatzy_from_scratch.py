@@ -133,3 +133,9 @@ def test_fives(dados):
 
 def test_sixes(dados):
     assert 6 == dados.sixes()
+
+
+def test_score_pair():
+    assert Yatzy.score_pair(2, 1, 3, 2, 1) == 6
+    assert Yatzy.score_pair(3, 2, 3, 4, 2) == 10
+    assert Yatzy.score_pair(5, 4, 5, 6, 4) == 18
