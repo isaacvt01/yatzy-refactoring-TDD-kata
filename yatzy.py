@@ -15,20 +15,8 @@ class Yatzy:
             return 0
 
     @staticmethod
-    def ones(d1, d2, d3, d4, d5):
-        sum = 0
-        if (d1 == 1):
-            sum += 1
-        if (d2 == 1):
-            sum += 1
-        if (d3 == 1):
-            sum += 1
-        if (d4 == 1):
-            sum += 1
-        if (d5 == 1):
-            sum += 1
-
-        return sum
+    def ones(*dice):
+        return dice.count(1)
 
     @staticmethod
     def twos(d1, d2, d3, d4, d5):
@@ -60,13 +48,8 @@ class Yatzy:
             s += 3
         return s
 
-    def __init__(self, d1, d2, d3, d4, _5):
-        self.dice = [0] * 5
-        self.dice[0] = d1
-        self.dice[1] = d2
-        self.dice[2] = d3
-        self.dice[3] = d4
-        self.dice[4] = _5
+    def __init__(self, dice):
+        self.dice = dice
 
     def fours(self):
         sum = 0
