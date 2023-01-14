@@ -1,3 +1,4 @@
+from digits import Numbers
 class Yatzy:
 
     @staticmethod
@@ -16,27 +17,33 @@ class Yatzy:
 
     @staticmethod
     def ones(*dice):
-        return dice.count(1)
+        ONE = Numbers.ONE.value
+        return dice.count(ONE)
 
     @staticmethod
     def twos(*dice):
-        return dice.count(2) * 2
+        TWO = Numbers.TWO.value
+        return dice.count(TWO) * TWO
 
     @staticmethod
     def threes(*dice):
-        return dice.count(3) * 3
+        THREE = Numbers.THREE.value
+        return dice.count(THREE) * THREE
 
     def __init__(self, *dice):
         self.dice = dice
 
     def fours(self):
-        return self.dice.count(4) * 4
+        FOUR = Numbers.FOUR.value
+        return self.dice.count(FOUR) * FOUR
 
     def fives(self):
-        return self.dice.count(5) * 5
+        FIVE = Numbers.FIVE.value
+        return self.dice.count(FIVE) * FIVE
 
     def sixes(self):
-        return self.dice.count(6) * 6
+        SIX = Numbers.SIX.value
+        return self.dice.count(SIX) * SIX
 
     @staticmethod
     def two_pairs(*dice):
